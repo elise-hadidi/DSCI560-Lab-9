@@ -13,6 +13,7 @@ torch
 flask
 flask-cors
 python-dotenv
+duckdb
 
 # Mac:    conda install -c conda-forge faiss-cpu
 # Other:  pip install faiss-cpu==1.7.4
