@@ -1,12 +1,18 @@
-streamlit
 pypdf2
-langchain
-python-dotenv
-faiss-cpu
-openai
-sentence_transformers
 pymupdf
 pillow
 pytesseract
-langchain-openai
+langchain
+langchain-core
 langchain-community
+langchain-text-splitters
+langchain-huggingface
+sentence-transformers
+transformers
+torch
+flask
+flask-cors
+python-dotenv
+
+# Mac:    conda install -c conda-forge faiss-cpu
+# Other:  pip install faiss-cpu==1.7.4
