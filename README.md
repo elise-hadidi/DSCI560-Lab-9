@@ -11,7 +11,8 @@ A Q&A chatbot that extracts text from PDF documents, splits it into chunks, gene
 DSCI560-Lab-9/
 │
 ├── Scripts/
-│   ├── app_p1.py
+│   ├── openai_app.py
+│   ├── pdf_extractor_updated.py
 │   ├── app_opensource.py
 │   └── server.py  
 │
@@ -19,6 +20,8 @@ DSCI560-Lab-9/
 │   └── index.html     
 │
 ├── Data/
+│   ├── uploads/
+│   │   └──0f4f3aa0986740d7a4cde3217c05c8ad_Ads_cookbook_.pdf
 │   └── Ads cookbook .pdf
 │
 ├── requirements.txt
@@ -27,7 +30,8 @@ DSCI560-Lab-9/
 ```
 
 ## Files
-* app.py — main pipeline with OpenAI
+* openai_app.py — main pipeline with OpenAI
+* pdf_extractor_updated.py - PDF extractor
 * app_opensource.py - main pipeline with open source resources
 * server.py — Flask backend
 * index.html — web interface with PDF upload and chat window
@@ -39,14 +43,16 @@ pip install -r requirements.txt
 ```
 
 ## How to Run
-1. Start the Flask backend (from DSCI560-Lab-9/Scripts):
+1. Set up .env file with OpenAI API key
+
+3. Start the Flask backend (from DSCI560-Lab-9/Scripts):
 ```
 python server.py
 ```
 
-2. Open your browser and go to:
+3. Open your browser and go to:
 ```
 http://127.0.0.1:5000
 ```
 
-3. Upload one or multiple PDF(s) using the upload box, click "Process", then type a question.
+4. Upload one or multiple PDF(s) using the upload box, click "Process", then type a question.
