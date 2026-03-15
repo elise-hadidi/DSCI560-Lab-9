@@ -19,7 +19,9 @@ DSCI560-Lab-9/
 ├── Data/
 │   └── Ads cookbook .pdf
 │
-└── .env       
+├── requirements.txt
+├── README.md        
+└── .env  
 ```
 
 ## Files
