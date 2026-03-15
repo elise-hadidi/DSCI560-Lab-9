@@ -7,15 +7,19 @@
 
 ## Folder Structure
 ```
-DSCI560-Lab-5/
-├── Data/
-│   ├── 
-│   └── 
+DSCI560-Lab-9/
+│
 ├── Scripts/
-│   ├── 
-│   └── 
-├── README.md
-└── requirements.txt
+│   ├── app.py       
+│   └── server.py  
+│
+├── Web/
+│   └── index.html     
+│
+├── Data/
+│   └── Ads cookbook .pdf
+│
+└── .env       
 ```
 
 ## Files
