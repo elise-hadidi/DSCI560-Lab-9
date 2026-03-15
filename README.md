@@ -11,7 +11,8 @@ A Q&A chatbot that extracts text from PDF documents, splits it into chunks, gene
 DSCI560-Lab-9/
 │
 ├── Scripts/
-│   ├── app.py       
+│   ├── app_p1.py
+│   ├── app_opensource.py
 │   └── server.py  
 │
 ├── Web/
@@ -26,7 +27,8 @@ DSCI560-Lab-9/
 ```
 
 ## Files
-* app.py — main pipeline
+* app.py — main pipeline with OpenAI
+* app_opensource.py - main pipeline with open source resources
 * server.py — Flask backend
 * index.html — web interface with PDF upload and chat window
 
