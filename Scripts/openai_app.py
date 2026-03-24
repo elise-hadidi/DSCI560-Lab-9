@@ -4,6 +4,7 @@ import re
 import html
 import argparse
 from typing import List, Dict
+from dotenv import load_dotenv
 
 import warnings
 warnings.filterwarnings("ignore")
@@ -28,7 +29,10 @@ overlap         = 100
 delimiter       = "\n"
 string_min      = 200
 
+load_dotenv()
+
 OPEN_AI_KEY     = os.getenv("OPENAI_API_KEY", "")
+print(f"Using OpenAI API Key: {'set' if OPEN_AI_KEY else 'not set'}")
 EMBEDDING_MODEL = "text-embedding-3-large"
 LLM_MODEL       = "gpt-3.5-turbo"
 
@@ -131,7 +135,7 @@ def pages_to_chunks(page_rows: List[Dict],
 
 def get_vectorstore(text_chunks: List[str]) -> FAISS:
     print(f"  Loading embedding model: {EMBEDDING_MODEL}")
-    embeddings = OpenAIEmbeddings(model=EMBEDDING_MODEL, client=client)
+    embeddings = OpenAIEmbeddings(model=EMBEDDING_MODEL)
     return FAISS.from_texts(texts=text_chunks, embedding=embeddings)
 
 
