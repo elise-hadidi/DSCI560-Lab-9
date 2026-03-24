@@ -32,7 +32,6 @@ string_min      = 200
 load_dotenv()
 
 OPEN_AI_KEY     = os.getenv("OPENAI_API_KEY", "")
-print(f"Using OpenAI API Key: {'set' if OPEN_AI_KEY else 'not set'}")
 EMBEDDING_MODEL = "text-embedding-3-large"
 LLM_MODEL       = "gpt-3.5-turbo"
 
