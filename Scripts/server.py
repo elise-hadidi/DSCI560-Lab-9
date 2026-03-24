@@ -5,13 +5,11 @@ from flask_cors import CORS
 from werkzeug.utils import secure_filename
 
 from app_opensource import (
-    pdf_file_to_page_texts,
-    pages_to_chunks,
+    get_pdf_text,
+    get_text_chunks,
     get_vectorstore,
-    get_chain,
-    clean_answer,
-    chunk_param,
-    overlap
+    get_conversation_chain,
+    chunk_param
 )
 
 app = Flask(__name__, static_folder="../Web")
@@ -49,17 +47,17 @@ def upload():
             save_path = os.path.join(UPLOAD_FOLDER, unique_name)
             f.save(save_path)
             saved_files.append(filename)
-            all_pages.extend(pdf_file_to_page_texts(save_path))
+            all_pages.extend(get_pdf_text(save_path))
 
     if not all_pages:
         return jsonify({"error": "Could not extract text from uploaded files"}), 400
 
-    chunks = pages_to_chunks(all_pages, chunk_size=chunk_param)
-    vectorstore = get_vectorstore(chunks)
-    active_chain = get_chain(vectorstore)
+    text_chunks = get_text_chunks(all_pages, chunk_size=chunk_param)
+    vectorstore = get_vectorstore(text_chunks)
+    active_chain = get_conversation_chain(vectorstore)
 
     return jsonify({
-        "message": f"Processed {len(saved_files)} file(s) into {len(chunks)} chunks.",
+        "message": f"Processed {len(saved_files)} file(s) into {len(text_chunks)} chunks.",
         "files": saved_files
     })
 
