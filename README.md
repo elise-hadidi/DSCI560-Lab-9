@@ -12,7 +12,6 @@ DSCI560-Lab-9/
 │
 ├── Scripts/
 │   ├── openai_app.py
-│   ├── pdf_extractor_updated.py
 │   ├── app_opensource.py
 │   └── server.py  
 │
