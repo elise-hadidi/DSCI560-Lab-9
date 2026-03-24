@@ -30,7 +30,6 @@ DSCI560-Lab-9/
 
 ## Files
 * openai_app.py — main pipeline with OpenAI
-* pdf_extractor_updated.py - PDF extractor
 * app_opensource.py - main pipeline with open source resources
 * server.py — Flask backend
 * index.html — web interface with PDF upload and chat window
